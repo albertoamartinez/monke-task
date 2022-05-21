@@ -29,17 +29,17 @@ function sortTodoistTasks(todoistTasks: Task[]): Task[] {
   tasksWithoutUndefinedDates = todoistTasks.filter((task) => {
     return task.date != ''
   })
-  
+
   tasksWithUndefinedDates = todoistTasks.filter((task) => {
     return task.date == ''
   })
 
-  sortedTodoistTasks = tasksWithoutUndefinedDates.sort((a,b) => {
-      return (new Date(a.date).getTime() - new Date(b.date).getTime())
+  sortedTodoistTasks = tasksWithoutUndefinedDates.sort((a, b) => {
+    return (new Date(a.date).getTime() - new Date(b.date).getTime())
   });
-  
+
   sortedTodoistTasks.push(...tasksWithUndefinedDates);
-    
+
   return sortedTodoistTasks;
 }
 
