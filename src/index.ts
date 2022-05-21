@@ -31,24 +31,24 @@ client.on('ready', async () => {
   notifyNewTasks(client);
 });
 
- 
+
 client.on('interactionCreate', async (interaction: Interaction) => {
   if (!interaction.isCommand()) return;
 
   const { commandName } = interaction;
-  
-  if (commandName === 'tarefas') {
-    if(interaction.options.getSubcommand() === 'totais'){
+
+  if (commandName === 'tarefas_bixos') {
+    if (interaction.options.getSubcommand() === 'totais') {
       await GetAllTasks(interaction, '');
     }
-    else if(interaction.options.getSubcommand() === 'hoje'){
+    else if (interaction.options.getSubcommand() === 'hoje') {
       await GetAllTasks(interaction, 'today');
     }
-    else if(interaction.options.getSubcommand() === 'amanhã'){
+    else if (interaction.options.getSubcommand() === 'amanhã') {
       await GetAllTasks(interaction, 'tomorrow');
     }
   }
-  
+
 });
 
 client.login(DISCORD_TOKEN);
