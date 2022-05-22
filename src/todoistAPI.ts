@@ -29,22 +29,22 @@ function sortTodoistTasks(todoistTasks: Task[]): Task[] {
   tasksWithoutUndefinedDates = todoistTasks.filter((task) => {
     return task.date != ''
   })
-  
+
   tasksWithUndefinedDates = todoistTasks.filter((task) => {
     return task.date == ''
   })
 
-  sortedTodoistTasks = tasksWithoutUndefinedDates.sort((a,b) => {
-      return (new Date(a.date).getTime() - new Date(b.date).getTime())
+  sortedTodoistTasks = tasksWithoutUndefinedDates.sort((a, b) => {
+    return (new Date(a.date).getTime() - new Date(b.date).getTime())
   });
-  
+
   sortedTodoistTasks.push(...tasksWithUndefinedDates);
-    
+
   return sortedTodoistTasks;
 }
 
 async function getTodoistTasks(filter: string, guildId?: string): Promise<Task[]> {
-  let project_id = '2273148315';
+  let project_id = '2291947259';
 
   if (guildId === '762325895595687947') {
     project_id = '2274078148';

@@ -43,14 +43,14 @@ function sendNotificationMessage(channel: TextChannel, tasks: Task[]) {
   const message = createMessage(tasks);
 
   //const debugNotificationRoleId = "956155701879799839";
-  const notificationRoleId = "864163173712003072";
+  const notificationRoleId = "932750369157685298";
   channel.send(`<@&${notificationRoleId}>\n`);
   channel.send(`\n:bell: ${tasks.length} ** tarefas foram adicionadas ou modificadas: ** \n`);
   channel.send(`\n${message}`);
 }
 
 function notifyNewTasks(client: Client<boolean>) {
-  const notificationChannelId = "864146427176943626";
+  const notificationChannelId = "932749818168758352";
   //const debugNotificationChannelId = "956155530349543474";
   const channel = client.channels.cache.get(notificationChannelId) as TextChannel;
 
