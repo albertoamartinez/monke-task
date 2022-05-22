@@ -44,7 +44,7 @@ function sortTodoistTasks(todoistTasks: Task[]): Task[] {
 }
 
 async function getTodoistTasks(filter: string, guildId?: string): Promise<Task[]> {
-  let project_id = '2273148315';
+  let project_id = '2291947259';
 
   if (guildId === '762325895595687947') {
     project_id = '2274078148';
